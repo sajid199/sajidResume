@@ -14,10 +14,10 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #333;
             background-color: #f5f7f9;
-            padding: 20px;
+            padding: 15px;
         }
 
         .resume-container {
@@ -32,7 +32,7 @@
         .header {
             background: #2c3e50;
             color: white;
-            padding: 30px 40px;
+            padding: 20px 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,52 +40,53 @@
         }
 
         .name {
-            font-size: 2.2em;
+            font-size: 2em;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             letter-spacing: 0.5px;
         }
 
         .title {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            color: #ecf0f1;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: #ffffff;
             font-weight: 400;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 8px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.95em;
+            gap: 6px;
+            font-size: 0.9em;
+            color: #ffffff;
         }
 
         .content {
-            padding: 30px 40px;
+            padding: 20px 30px;
         }
 
         .section {
-            margin-bottom: 35px;
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: 1.3em;
+            font-size: 1.1em;
             color: #2c3e50;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .section-title i {
@@ -94,90 +95,88 @@
 
         .summary-text {
             text-align: justify;
-            line-height: 1.7;
+            line-height: 1.5;
             color: #555;
-            padding: 0 5px;
+            font-size: 0.95em;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
         }
 
         .skill-item {
             background: #f8f9fa;
             color: #2c3e50;
-            padding: 12px 15px;
+            padding: 8px 12px;
             border-radius: 4px;
             text-align: center;
             font-weight: 500;
             border-left: 3px solid #3498db;
-            transition: all 0.2s ease;
-        }
-
-        .skill-item:hover {
-            background: #e8f4fc;
+            font-size: 0.9em;
         }
 
         .employment-item {
             background: #f8f9fa;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             border-left: 3px solid #2c3e50;
         }
 
         .company-name {
             font-weight: 600;
             color: #2c3e50;
-            font-size: 1.1em;
-            margin-bottom: 5px;
+            font-size: 1em;
+            margin-bottom: 3px;
         }
 
         .position {
             color: #3498db;
             font-weight: 500;
-            margin: 5px 0;
+            margin: 3px 0;
+            font-size: 0.95em;
         }
 
         .duration {
             color: #7f8c8d;
             font-style: italic;
-            font-size: 0.95em;
+            font-size: 0.9em;
         }
 
         .project {
             background: #fff;
             border: 1px solid #eaecee;
             border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
+            page-break-inside: avoid;
         }
 
         .project-header {
             background: #f8f9fa;
-            padding: 15px;
+            padding: 12px;
             border-radius: 4px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             border-left: 3px solid #3498db;
         }
 
         .client-name {
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             color: #2c3e50;
         }
 
         .project-type, .project-duration {
-            font-size: 0.95em;
+            font-size: 0.85em;
             color: #7f8c8d;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .responsibilities {
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .responsibilities ul {
@@ -187,92 +186,68 @@
 
         .responsibilities li {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-            line-height: 1.6;
+            padding-left: 20px;
+            margin-bottom: 5px;
+            line-height: 1.4;
+            font-size: 0.9em;
         }
 
         .responsibilities li::before {
             content: '•';
             position: absolute;
-            left: 10px;
+            left: 8px;
             color: #3498db;
             font-weight: bold;
         }
 
         .education {
             background: #f8f9fa;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             text-align: center;
             font-weight: 500;
             border-left: 3px solid #2c3e50;
+            font-size: 0.95em;
         }
 
         .achievements {
             display: grid;
-            gap: 12px;
+            gap: 8px;
         }
 
         .achievement-item {
             background: #f8f9fa;
             color: #2c3e50;
-            padding: 15px 20px;
+            padding: 10px 15px;
             border-radius: 5px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             border-left: 3px solid #27ae60;
+            font-size: 0.9em;
         }
 
         .achievement-icon {
             color: #27ae60;
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
 
         .declaration {
             background: #f8f9fa;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             text-align: justify;
-            line-height: 1.7;
+            line-height: 1.5;
             font-style: italic;
             border-left: 3px solid #95a5a6;
+            font-size: 0.9em;
         }
 
         .signature {
             text-align: right;
-            margin-top: 15px;
+            margin-top: 10px;
             font-weight: 600;
             font-style: normal;
-        }
-
-        @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                gap: 12px;
-                align-items: center;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .header {
-                padding: 25px 20px;
-            }
-            
-            .name {
-                font-size: 1.8em;
-            }
-            
-            .section-title {
-                font-size: 1.2em;
-            }
         }
 
         .print-btn {
@@ -296,25 +271,164 @@
             transform: scale(1.05);
         }
 
+        /* Page break optimization */
+        .page-break-before {
+            page-break-before: always;
+        }
+
+        .page-break-after {
+            page-break-after: always;
+        }
+
+        .page-break-avoid {
+            page-break-inside: avoid;
+        }
+
+        /* Two column layout for projects to save space */
+        .projects-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .content {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 15px;
+            }
+        }
+
         @media print {
             body { 
-                background: white; 
-                padding: 0; 
-                font-size: 12pt;
+                background: white !important; 
+                padding: 0 !important; 
+                font-size: 10pt !important;
+                line-height: 1.3 !important;
             }
+            
             .resume-container { 
-                box-shadow: none; 
-                margin: 0; 
-                max-width: 100%;
+                box-shadow: none !important; 
+                margin: 0 !important; 
+                max-width: 100% !important;
+                border-radius: 0 !important;
             }
+            
             .print-btn { 
-                display: none; 
+                display: none !important; 
             }
-            .section { 
-                page-break-inside: avoid; 
+            
+            .header {
+                padding: 15px 20px !important;
             }
+            
+            .content {
+                padding: 15px 20px !important;
+            }
+            
+            .section {
+                margin-bottom: 15px !important;
+            }
+            
+            .section-title {
+                font-size: 11pt !important;
+                margin-bottom: 8px !important;
+                padding-bottom: 3px !important;
+            }
+            
             .project {
-                page-break-inside: avoid;
+                margin-bottom: 12px !important;
+                padding: 12px !important;
+                page-break-inside: avoid !important;
+            }
+            
+            .project-header {
+                padding: 8px !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .responsibilities li {
+                margin-bottom: 3px !important;
+                font-size: 9pt !important;
+                line-height: 1.3 !important;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 6px !important;
+            }
+            
+            .skill-item {
+                padding: 6px 8px !important;
+                font-size: 8pt !important;
+            }
+            
+            .summary-text {
+                font-size: 9pt !important;
+                line-height: 1.4 !important;
+            }
+            
+            .employment-item, .education, .achievement-item, .declaration {
+                padding: 10px !important;
+                font-size: 9pt !important;
+            }
+            
+            .name {
+                font-size: 16pt !important;
+            }
+            
+            .title {
+                font-size: 11pt !important;
+            }
+            
+            .contact-item {
+                font-size: 8pt !important;
+                color: #ffffff !important;
+            }
+            
+            /* Force page break before projects section */
+            .projects-section {
+                page-break-before: always !important;
+            }
+            
+            /* Ensure specific sections stay together */
+            .page-break-avoid {
+                page-break-inside: avoid !important;
+            }
+            
+            /* Compact spacing for print */
+            .project-type, .project-duration {
+                font-size: 8pt !important;
+                margin-bottom: 1px !important;
+            }
+            
+            .client-name {
+                font-size: 9pt !important;
+                margin-bottom: 2px !important;
+            }
+            
+            .company-name {
+                font-size: 9pt !important;
+            }
+            
+            .position {
+                font-size: 8pt !important;
+            }
+            
+            .duration {
+                font-size: 8pt !important;
             }
         }
     </style>
@@ -341,14 +455,14 @@
         </header>
 
         <div class="content">
-            <section class="section">
+            <section class="section page-break-avoid">
                 <h2 class="section-title"><i class="fas fa-user-tie"></i> PROFESSIONAL SUMMARY</h2>
                 <div class="summary-text">
                     Over 4.5+ years of IT experience, including 3+ years as a SAP Security and GRC Consultant with expertise in ECC, S/4HANA Security, and GRC. Worked on diverse projects, including the implementation, Go-Live and Post Go-Live support for Production of ECC, S/4HANA, Fiori, and GRC applications. Hands-on experience in User administration & Role administration tasks, and troubleshooting missing authorizations issues. Involved in Audit logs configuration and monitoring. Proficient in GRC Access Control tools, including ARA, EAM, ARM, and BRM, with hands-on experience in workflow configuration and support. Strong knowledge of GRC implementation, configuration, and troubleshooting. Positive work attitude and self-motivated to work independently and as well as in team.
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section page-break-avoid">
                 <h2 class="section-title"><i class="fas fa-tools"></i> SKILL SET</h2>
                 <div class="skills-grid">
                     <div class="skill-item">SAP ECC Security</div>
@@ -362,7 +476,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section page-break-avoid">
                 <h2 class="section-title"><i class="fas fa-briefcase"></i> EMPLOYMENT HISTORY</h2>
                 <div class="employment-item">
                     <div class="company-name">Capgemini Technology Services</div>
@@ -371,80 +485,83 @@
                 </div>
             </section>
 
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-project-diagram"></i> PROJECT DETAILS</h2>
-                
-                <!-- Project 1: GE Vernova -->
-                <div class="project">
-                    <div class="project-header">
-                        <div class="client-name">Client: GE Vernova (Energy Solutions Company)</div>
-                        <div class="project-type">Project Type: Security S/4HANA Implementation & Cloud Migration</div>
-                        <div class="project-duration">Duration: December 2022 – Present</div>
-                        <div class="project-duration">Designation: SAP Security and GRC Consultant</div>
-                    </div>
-                    <div class="responsibilities">
-                        <strong>Roles & Responsibilities:</strong>
-                        <ul>
-                            <li>Led SAP security implementation for GE Vernova's energy solutions division covering Wind, Gas, and Grid technologies</li>
-                            <li>Successfully designed and implemented comprehensive security architecture for Finance, SCM, and Energy Management modules</li>
-                            <li>Participated in security workshops and Agile sprint activities for cloud-based SAP architecture</li>
-                            <li>Configured SAP Fiori applications and GUI apps in Fiori Admin launchpad with custom spaces and pages for energy operations</li>
-                            <li>Created Reference Catalogs and Groups specific to energy industry business requirements</li>
-                            <li>Developed role matrix for energy sector-specific job positions including Plant Operations, Grid Management, and Renewable Energy teams</li>
-                            <li>Implemented OData service-specific roles in S/4HANA system for real-time energy data processing and analytics</li>
-                            <li>Coordinated with functional and technical teams for OData services activation supporting energy management workflows</li>
-                            <li>Managed GRC workflows for energy sector compliance including SOX, NERC-CIP, and ISO 27001 standards</li>
-                            <li>Created and monitored Firefighter IDs for critical energy operations with enhanced audit trails</li>
-                            <li>Implemented advanced user administration through GRC tools with role-based access for multi-site energy facilities</li>
-                            <li>Resolved complex authorization issues for energy-specific transactions and SAP Plant Maintenance modules</li>
-                            <li>Utilized advanced security traces (SU53, STAUTHTRACE, ST01) for energy operations troubleshooting</li>
-                            <li>Implemented mass role management and profile generation for large-scale energy workforce</li>
-                            <li>Generated comprehensive security reports using SUIM for energy sector audit compliance</li>
-                            <li>Successfully migrated security configurations to cloud infrastructure improving deployment efficiency by 40%</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 2: Herff Jones -->
-                <div class="project">
-                    <div class="project-header">
-                        <div class="client-name">Client: Herff Jones (Manufacturing Company)</div>
-                        <div class="project-type">Project Type: Security Implementation & Cloud Migration Support</div>
-                        <div class="project-duration">Duration: July 2021 – December 2022</div>
-                        <div class="project-duration">Designation: SAP Security Consultant</div>
-                    </div>
-                    <div class="responsibilities">
-                        <strong>Roles & Responsibilities:</strong>
-                        <ul>
-                            <li>Implemented SAP security for Herff Jones' manufacturing operations including yearbooks, class rings, and graduation products</li>
-                            <li>Successfully executed cloud migration project with zero production downtime during transition</li>
-                            <li>Designed OData service-specific roles for S/4HANA backend supporting manufacturing and supply chain processes</li>
-                            <li>Resolved user-reported issues for manufacturing-specific OData services and Fiori applications</li>
-                            <li>Coordinated with cross-functional teams for OData services activation supporting production planning</li>
-                            <li>Maintained authorization objects for manufacturing modules including PP (Production Planning) and MM (Materials Management)</li>
-                            <li>Performed comprehensive user administration including creation, password management, and validity controls</li>
-                            <li>Created and modified roles using PFCG for manufacturing job positions and seasonal workforce requirements</li>
-                            <li>Updated authorization objects via SU24 for custom manufacturing transactions and processes</li>
-                            <li>Implemented remediation and mitigation strategies for SOD conflicts in manufacturing environment</li>
-                            <li>Conducted risk analysis and simulation for user and role assignments in production systems</li>
-                            <li>Managed catalog additions, groups, IWSG and IWSV services for manufacturing-specific Fiori apps</li>
-                            <li>Implemented Emergency Access Management (EAM) and Firefighter procedures for critical manufacturing processes</li>
-                            <li>Utilized ChaRM for transport management ensuring smooth role deployments across development lifecycle</li>
-                            <li>Provided 24/7 technical support during peak manufacturing seasons and graduation periods</li>
-                            <li>Achieved 99.5% system availability during critical production periods through proactive security monitoring</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
+            <section class="section page-break-avoid">
                 <h2 class="section-title"><i class="fas fa-graduation-cap"></i> EDUCATIONAL DETAILS</h2>
                 <div class="education">
                     Bachelor of Engineering (Computer Science) from Jawaharlal Nehru Technological University
                 </div>
             </section>
 
-            <section class="section">
+            <!-- Force page break before projects -->
+            <section class="section projects-section">
+                <h2 class="section-title"><i class="fas fa-project-diagram"></i> PROJECT DETAILS</h2>
+                
+                <div class="projects-container">
+                    <!-- Project 1: GE Vernova -->
+                    <div class="project page-break-avoid">
+                        <div class="project-header">
+                            <div class="client-name">Client: GE Vernova (Energy Solutions Company)</div>
+                            <div class="project-type">Project Type: Security S/4HANA Implementation & Cloud Migration</div>
+                            <div class="project-duration">Duration: December 2022 – Present</div>
+                            <div class="project-duration">Designation: SAP Security and GRC Consultant</div>
+                        </div>
+                        <div class="responsibilities">
+                            <strong>Roles & Responsibilities:</strong>
+                            <ul>
+                                <li>Led SAP security implementation for GE Vernova's energy solutions division covering Wind, Gas, and Grid technologies</li>
+                                <li>Successfully designed and implemented comprehensive security architecture for Finance, SCM, and Energy Management modules</li>
+                                <li>Participated in security workshops and Agile sprint activities for cloud-based SAP architecture</li>
+                                <li>Configured SAP Fiori applications and GUI apps in Fiori Admin launchpad with custom spaces and pages for energy operations</li>
+                                <li>Created Reference Catalogs and Groups specific to energy industry business requirements</li>
+                                <li>Developed role matrix for energy sector-specific job positions including Plant Operations, Grid Management, and Renewable Energy teams</li>
+                                <li>Implemented OData service-specific roles in S/4HANA system for real-time energy data processing and analytics</li>
+                                <li>Coordinated with functional and technical teams for OData services activation supporting energy management workflows</li>
+                                <li>Managed GRC workflows for energy sector compliance including SOX, NERC-CIP, and ISO 27001 standards</li>
+                                <li>Created and monitored Firefighter IDs for critical energy operations with enhanced audit trails</li>
+                                <li>Implemented advanced user administration through GRC tools with role-based access for multi-site energy facilities</li>
+                                <li>Resolved complex authorization issues for energy-specific transactions and SAP Plant Maintenance modules</li>
+                                <li>Utilized advanced security traces (SU53, STAUTHTRACE, ST01) for energy operations troubleshooting</li>
+                                <li>Implemented mass role management and profile generation for large-scale energy workforce</li>
+                                <li>Generated comprehensive security reports using SUIM for energy sector audit compliance</li>
+                                <li>Successfully migrated security configurations to cloud infrastructure improving deployment efficiency by 40%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Herff Jones -->
+                    <div class="project page-break-avoid">
+                        <div class="project-header">
+                            <div class="client-name">Client: Herff Jones (Manufacturing Company)</div>
+                            <div class="project-type">Project Type: Security Implementation & Cloud Migration Support</div>
+                            <div class="project-duration">Duration: July 2021 – December 2022</div>
+                            <div class="project-duration">Designation: SAP Security Consultant</div>
+                        </div>
+                        <div class="responsibilities">
+                            <strong>Roles & Responsibilities:</strong>
+                            <ul>
+                                <li>Implemented SAP security for Herff Jones' manufacturing operations including yearbooks, class rings, and graduation products</li>
+                                <li>Successfully executed cloud migration project with zero production downtime during transition</li>
+                                <li>Designed OData service-specific roles for S/4HANA backend supporting manufacturing and supply chain processes</li>
+                                <li>Resolved user-reported issues for manufacturing-specific OData services and Fiori applications</li>
+                                <li>Coordinated with cross-functional teams for OData services activation supporting production planning</li>
+                                <li>Maintained authorization objects for manufacturing modules including PP (Production Planning) and MM (Materials Management)</li>
+                                <li>Performed comprehensive user administration including creation, password management, and validity controls</li>
+                                <li>Created and modified roles using PFCG for manufacturing job positions and seasonal workforce requirements</li>
+                                <li>Updated authorization objects via SU24 for custom manufacturing transactions and processes</li>
+                                <li>Implemented remediation and mitigation strategies for SOD conflicts in manufacturing environment</li>
+                                <li>Conducted risk analysis and simulation for user and role assignments in production systems</li>
+                                <li>Managed catalog additions, groups, IWSG and IWSV services for manufacturing-specific Fiori apps</li>
+                                <li>Implemented Emergency Access Management (EAM) and Firefighter procedures for critical manufacturing processes</li>
+                                <li>Utilized ChaRM for transport management ensuring smooth role deployments across development lifecycle</li>
+                                <li>Provided 24/7 technical support during peak manufacturing seasons and graduation periods</li>
+                                <li>Achieved 99.5% system availability during critical production periods through proactive security monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page-break-avoid">
                 <h2 class="section-title"><i class="fas fa-trophy"></i> ACHIEVEMENTS</h2>
                 <div class="achievements">
                     <div class="achievement-item">
@@ -458,7 +575,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section page-break-avoid">
                 <h2 class="section-title"><i class="fas fa-file-signature"></i> DECLARATION</h2>
                 <div class="declaration">
                     I hereby declare that the above mentioned particulars are true to the best of my knowledge and belief.
