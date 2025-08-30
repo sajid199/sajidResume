@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajid Ahmad - SAP Security Consultant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7f9;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+
+        .content {
+            padding: 30px 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #3498db;
+        }
+
+        .summary-text {
+            text-align: justify;
+            line-height: 1.7;
+            color: #555;
+            padding: 0 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            color: #2c3e50;
+            padding: 12px 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            border-left: 3px solid #3498db;
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            background: #e8f4fc;
+        }
+
+        .employment-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border-left: 3px solid #2c3e50;
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .position {
+            color: #3498db;
+            font-weight: 500;
+            margin: 5px 0;
+        }
+
+        .duration {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        .project {
+            background: #fff;
+            border: 1px solid #eaecee;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-header {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border-left: 3px solid #3498db;
+        }
+
+        .client-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .project-type, .project-duration {
+            font-size: 0.95em;
+            color: #7f8c8d;
+            margin-bottom: 3px;
+        }
+
+        .responsibilities {
+            margin-top: 15px;
+        }
+
+        .responsibilities ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .education {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            border-left: 3px solid #2c3e50;
+        }
+
+        .achievements {
+            display: grid;
+            gap: 12px;
+        }
+
+        .achievement-item {
+            background: #f8f9fa;
+            color: #2c3e50;
+            padding: 15px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 3px solid #27ae60;
+        }
+
+        .achievement-icon {
+            color: #27ae60;
+            font-size: 1.5em;
+        }
+
+        .declaration {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: justify;
+            line-height: 1.7;
+            font-style: italic;
+            border-left: 3px solid #95a5a6;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 25px 20px;
+            }
+            
+            .name {
+                font-size: 1.8em;
+            }
+            
+            .section-title {
+                font-size: 1.2em;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1em;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background: #3498db;
+            transform: scale(1.05);
+        }
+
+        @media print {
+            body { 
+                background: white; 
+                padding: 0; 
+                font-size: 12pt;
+            }
+            .resume-container { 
+                box-shadow: none; 
+                margin: 0; 
+                max-width: 100%;
+            }
+            .print-btn { 
+                display: none; 
+            }
+            .section { 
+                page-break-inside: avoid; 
+            }
+            .project {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <h1 class="name">Sajid Ahmad</h1>
+            <h2 class="title">SAP Security Consultant</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>sajideee2021@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>+91-7703983807</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Pune, India</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-user-tie"></i> PROFESSIONAL SUMMARY</h2>
+                <div class="summary-text">
+                    Over 4.5+ years of IT experience, including 3+ years as a SAP Security and GRC Consultant with expertise in ECC, S/4HANA Security, and GRC. Worked on diverse projects, including the implementation, Go-Live and Post Go-Live support for Production of ECC, S/4HANA, Fiori, and GRC applications. Hands-on experience in User administration & Role administration tasks, and troubleshooting missing authorizations issues. Involved in Audit logs configuration and monitoring. Proficient in GRC Access Control tools, including ARA, EAM, ARM, and BRM, with hands-on experience in workflow configuration and support. Strong knowledge of GRC implementation, configuration, and troubleshooting. Positive work attitude and self-motivated to work independently and as well as in team.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-tools"></i> SKILL SET</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">SAP ECC Security</div>
+                    <div class="skill-item">SAP GRC 12.0 Support</div>
+                    <div class="skill-item">SAP Fiori Security</div>
+                    <div class="skill-item">SAP S/4HANA Security</div>
+                    <div class="skill-item">User Administration</div>
+                    <div class="skill-item">Role Administration</div>
+                    <div class="skill-item">Authorization Management</div>
+                    <div class="skill-item">Security Implementation</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> EMPLOYMENT HISTORY</h2>
+                <div class="employment-item">
+                    <div class="company-name">Capgemini Technology Services</div>
+                    <div class="position">SAP Security Consultant</div>
+                    <div class="duration">July 20, 2021 – Present</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-project-diagram"></i> PROJECT DETAILS</h2>
+                
+                <!-- Project 1: GE Vernova -->
+                <div class="project">
+                    <div class="project-header">
+                        <div class="client-name">Client: GE Vernova (Energy Solutions Company)</div>
+                        <div class="project-type">Project Type: Security S/4HANA Implementation & Cloud Migration</div>
+                        <div class="project-duration">Duration: December 2022 – Present</div>
+                        <div class="project-duration">Designation: SAP Security and GRC Consultant</div>
+                    </div>
+                    <div class="responsibilities">
+                        <strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Led SAP security implementation for GE Vernova's energy solutions division covering Wind, Gas, and Grid technologies</li>
+                            <li>Successfully designed and implemented comprehensive security architecture for Finance, SCM, and Energy Management modules</li>
+                            <li>Participated in security workshops and Agile sprint activities for cloud-based SAP architecture</li>
+                            <li>Configured SAP Fiori applications and GUI apps in Fiori Admin launchpad with custom spaces and pages for energy operations</li>
+                            <li>Created Reference Catalogs and Groups specific to energy industry business requirements</li>
+                            <li>Developed role matrix for energy sector-specific job positions including Plant Operations, Grid Management, and Renewable Energy teams</li>
+                            <li>Implemented OData service-specific roles in S/4HANA system for real-time energy data processing and analytics</li>
+                            <li>Coordinated with functional and technical teams for OData services activation supporting energy management workflows</li>
+                            <li>Managed GRC workflows for energy sector compliance including SOX, NERC-CIP, and ISO 27001 standards</li>
+                            <li>Created and monitored Firefighter IDs for critical energy operations with enhanced audit trails</li>
+                            <li>Implemented advanced user administration through GRC tools with role-based access for multi-site energy facilities</li>
+                            <li>Resolved complex authorization issues for energy-specific transactions and SAP Plant Maintenance modules</li>
+                            <li>Utilized advanced security traces (SU53, STAUTHTRACE, ST01) for energy operations troubleshooting</li>
+                            <li>Implemented mass role management and profile generation for large-scale energy workforce</li>
+                            <li>Generated comprehensive security reports using SUIM for energy sector audit compliance</li>
+                            <li>Successfully migrated security configurations to cloud infrastructure improving deployment efficiency by 40%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2: Herff Jones -->
+                <div class="project">
+                    <div class="project-header">
+                        <div class="client-name">Client: Herff Jones (Manufacturing Company)</div>
+                        <div class="project-type">Project Type: Security Implementation & Cloud Migration Support</div>
+                        <div class="project-duration">Duration: July 2021 – December 2022</div>
+                        <div class="project-duration">Designation: SAP Security Consultant</div>
+                    </div>
+                    <div class="responsibilities">
+                        <strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Implemented SAP security for Herff Jones' manufacturing operations including yearbooks, class rings, and graduation products</li>
+                            <li>Successfully executed cloud migration project with zero production downtime during transition</li>
+                            <li>Designed OData service-specific roles for S/4HANA backend supporting manufacturing and supply chain processes</li>
+                            <li>Resolved user-reported issues for manufacturing-specific OData services and Fiori applications</li>
+                            <li>Coordinated with cross-functional teams for OData services activation supporting production planning</li>
+                            <li>Maintained authorization objects for manufacturing modules including PP (Production Planning) and MM (Materials Management)</li>
+                            <li>Performed comprehensive user administration including creation, password management, and validity controls</li>
+                            <li>Created and modified roles using PFCG for manufacturing job positions and seasonal workforce requirements</li>
+                            <li>Updated authorization objects via SU24 for custom manufacturing transactions and processes</li>
+                            <li>Implemented remediation and mitigation strategies for SOD conflicts in manufacturing environment</li>
+                            <li>Conducted risk analysis and simulation for user and role assignments in production systems</li>
+                            <li>Managed catalog additions, groups, IWSG and IWSV services for manufacturing-specific Fiori apps</li>
+                            <li>Implemented Emergency Access Management (EAM) and Firefighter procedures for critical manufacturing processes</li>
+                            <li>Utilized ChaRM for transport management ensuring smooth role deployments across development lifecycle</li>
+                            <li>Provided 24/7 technical support during peak manufacturing seasons and graduation periods</li>
+                            <li>Achieved 99.5% system availability during critical production periods through proactive security monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> EDUCATIONAL DETAILS</h2>
+                <div class="education">
+                    Bachelor of Engineering (Computer Science) from Jawaharlal Nehru Technological University
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-trophy"></i> ACHIEVEMENTS</h2>
+                <div class="achievements">
+                    <div class="achievement-item">
+                        <div class="achievement-icon"><i class="fas fa-award"></i></div>
+                        <div>Awarded Excellence in SAP Security Implementation for successful GE Vernova cloud migration project</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon"><i class="fas fa-star"></i></div>
+                        <div>Recognized for Outstanding Performance in Herff Jones zero-downtime production support</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-file-signature"></i> DECLARATION</h2>
+                <div class="declaration">
+                    I hereby declare that the above mentioned particulars are true to the best of my knowledge and belief.
+                    <div class="signature">Sajid Ahmad</div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()" title="Print Resume">
+        <i class="fas fa-print"></i>
+    </button>
+</body>
+</html>

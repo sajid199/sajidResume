@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajid Ahmad - SAP Security Consultant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1.0s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        .summary-text {
+            text-align: justify;
+            line-height: 1.8;
+            color: #555;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            transform: scale(1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .employment-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #e74c3c;
+            transition: all 0.3s ease;
+        }
+
+        .employment-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .company-name {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .position {
+            color: #3498db;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .duration {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .project {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .client-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .project-type {
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .project-duration {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .responsibilities {
+            margin-top: 15px;
+        }
+
+        .responsibilities ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .education {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .achievements {
+            display: grid;
+            gap: 15px;
+        }
+
+        .achievement-item {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+        }
+
+        .achievement-icon {
+            font-size: 2em;
+        }
+
+        .declaration {
+            background: #ecf0f1;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #95a5a6;
+            text-align: justify;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.6);
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .resume-container { box-shadow: none; margin: 0; }
+            .print-btn { display: none; }
+            .section { animation: none; opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">Sajid Ahmad</h1>
+                <h2 class="title">SAP Security Consultant</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>sajideee2021@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+91-7703983807</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Pune, India</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+                <div class="summary-text">
+                    Over 4.5+ years of IT experience, including 3+ years as a SAP Security and GRC Consultant with expertise in ECC, S/4HANA Security, and GRC. Worked on diverse projects, including the implementation, Go-Live and Post Go-Live support for Production of ECC, S/4HANA, Fiori, and GRC applications. Hands-on experience in User administration & Role administration tasks, and troubleshooting missing authorizations issues. Involved in Audit logs configuration and monitoring. Proficient in GRC Access Control tools, including ARA, EAM, ARM, and BRM, with hands-on experience in workflow configuration and support. Strong knowledge of GRC implementation, configuration, and troubleshooting. Positive work attitude and self-motivated to work independently and as well as in team.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">SKILL SET</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">SAP ECC Security</div>
+                    <div class="skill-item">SAP GRC 12.0 Support</div>
+                    <div class="skill-item">SAP Fiori Security</div>
+                    <div class="skill-item">SAP S/4HANA Security</div>
+                    <div class="skill-item">User Administration</div>
+                    <div class="skill-item">Role Administration</div>
+                    <div class="skill-item">Authorization Management</div>
+                    <div class="skill-item">Security Implementation</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">EMPLOYMENT HISTORY</h2>
+                <div class="employment-item">
+                    <div class="company-name">Capgemini Technology Services</div>
+                    <div class="position">SAP Security Consultant</div>
+                    <div class="duration">July 20, 2021 – Present</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">PROJECT DETAILS</h2>
+                
+                <!-- Project 1: GE Vernova -->
+                <div class="project">
+                    <div class="project-header">
+                        <div class="client-name">Client: GE Vernova (Energy Solutions Company)</div>
+                        <div class="project-type">Project Type: Security S/4HANA Implementation & Cloud Migration</div>
+                        <div class="project-duration">Duration: December 2022 – Present</div>
+                        <div class="project-duration">Designation: SAP Security and GRC Consultant</div>
+                    </div>
+                    <div class="responsibilities">
+                        <strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Led SAP security implementation for GE Vernova's energy solutions division covering Wind, Gas, and Grid technologies</li>
+                            <li>Successfully designed and implemented comprehensive security architecture for Finance, SCM, and Energy Management modules</li>
+                            <li>Participated in security workshops and Agile sprint activities for cloud-based SAP architecture</li>
+                            <li>Configured SAP Fiori applications and GUI apps in Fiori Admin launchpad with custom spaces and pages for energy operations</li>
+                            <li>Created Reference Catalogs and Groups specific to energy industry business requirements</li>
+                            <li>Developed role matrix for energy sector-specific job positions including Plant Operations, Grid Management, and Renewable Energy teams</li>
+                            <li>Implemented OData service-specific roles in S/4HANA system for real-time energy data processing and analytics</li>
+                            <li>Coordinated with functional and technical teams for OData services activation supporting energy management workflows</li>
+                            <li>Managed GRC workflows for energy sector compliance including SOX, NERC-CIP, and ISO 27001 standards</li>
+                            <li>Created and monitored Firefighter IDs for critical energy operations with enhanced audit trails</li>
+                            <li>Implemented advanced user administration through GRC tools with role-based access for multi-site energy facilities</li>
+                            <li>Resolved complex authorization issues for energy-specific transactions and SAP Plant Maintenance modules</li>
+                            <li>Utilized advanced security traces (SU53, STAUTHTRACE, ST01) for energy operations troubleshooting</li>
+                            <li>Implemented mass role management and profile generation for large-scale energy workforce</li>
+                            <li>Generated comprehensive security reports using SUIM for energy sector audit compliance</li>
+                            <li>Successfully migrated security configurations to cloud infrastructure improving deployment efficiency by 40%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2: Herff Jones -->
+                <div class="project">
+                    <div class="project-header">
+                        <div class="client-name">Client: Herff Jones (Manufacturing Company)</div>
+                        <div class="project-type">Project Type: Security Implementation & Cloud Migration Support</div>
+                        <div class="project-duration">Duration: July 2021 – December 2022</div>
+                        <div class="project-duration">Designation: SAP Security Consultant</div>
+                    </div>
+                    <div class="responsibilities">
+                        <strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Implemented SAP security for Herff Jones' manufacturing operations including yearbooks, class rings, and graduation products</li>
+                            <li>Successfully executed cloud migration project with zero production downtime during transition</li>
+                            <li>Designed OData service-specific roles for S/4HANA backend supporting manufacturing and supply chain processes</li>
+                            <li>Resolved user-reported issues for manufacturing-specific OData services and Fiori applications</li>
+                            <li>Coordinated with cross-functional teams for OData services activation supporting production planning</li>
+                            <li>Maintained authorization objects for manufacturing modules including PP (Production Planning) and MM (Materials Management)</li>
+                            <li>Performed comprehensive user administration including creation, password management, and validity controls</li>
+                            <li>Created and modified roles using PFCG for manufacturing job positions and seasonal workforce requirements</li>
+                            <li>Updated authorization objects via SU24 for custom manufacturing transactions and processes</li>
+                            <li>Implemented remediation and mitigation strategies for SOD conflicts in manufacturing environment</li>
+                            <li>Conducted risk analysis and simulation for user and role assignments in production systems</li>
+                            <li>Managed catalog additions, groups, IWSG and IWSV services for manufacturing-specific Fiori apps</li>
+                            <li>Implemented Emergency Access Management (EAM) and Firefighter procedures for critical manufacturing processes</li>
+                            <li>Utilized ChaRM for transport management ensuring smooth role deployments across development lifecycle</li>
+                            <li>Provided 24/7 technical support during peak manufacturing seasons and graduation periods</li>
+                            <li>Achieved 99.5% system availability during critical production periods through proactive security monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">EDUCATIONAL DETAILS</h2>
+                <div class="education">
+                    Bachelor of Engineering (Computer Science) from Jawaharlal Nehru Technological University
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">ACHIEVEMENTS</h2>
+                <div class="achievements">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🏆</div>
+                        <div>Awarded Excellence in SAP Security Implementation for successful GE Vernova cloud migration project</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">⭐</div>
+                        <div>Recognized for Outstanding Performance in Herff Jones zero-downtime production support</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">DECLARATION</h2>
+                <div class="declaration">
+                    I hereby declare that the above mentioned particulars are true to the best of my knowledge and belief.
+                    <br><br>
+                    <strong>Sajid Ahmad</strong>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()" title="Print Resume">
+        🖨️
+    </button>
+
+    <script>
+        // Add smooth scrolling animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill items on hover
+            const skillItems = document.querySelectorAll('.skill-item');
+            skillItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) rotate(2deg)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+            });
+
+            // Add click animation to sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+
+            // Animate contact items
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach((item, index) => {
+                item.style.animation = `fadeInUp 0.6s ease-out ${0.2 + index * 0.1}s forwards`;
+                item.style.opacity = '0';
+            });
+
+            // Add typing effect to name (optional enhancement)
+            const nameElement = document.querySelector('.name');
+            const originalText = nameElement.textContent;
+            nameElement.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    nameElement.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            setTimeout(typeWriter, 1000);
+        });
+
+        // Add print optimization
+        window.addEventListener('beforeprint', function() {
+            document.body.style.background = 'white';
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        });
+    </script>
+</body>
+</html>
