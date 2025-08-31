@@ -250,10 +250,18 @@
             font-style: normal;
         }
 
-        .print-btn {
+        /* Action buttons container */
+        .action-buttons {
             position: fixed;
             bottom: 20px;
             right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .action-btn {
             background: #2c3e50;
             color: white;
             border: none;
@@ -263,12 +271,67 @@
             font-size: 1.1em;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
-            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-btn {
+            background: #27ae60;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
         }
 
         .print-btn:hover {
             background: #3498db;
-            transform: scale(1.05);
+        }
+
+        .download-btn:hover {
+            background: #229954;
+        }
+
+        /* Tooltip styles */
+        .action-btn {
+            position: relative;
+        }
+
+        .action-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .action-btn::after {
+            content: '';
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #333;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .action-btn:hover::before,
+        .action-btn:hover::after {
+            opacity: 1;
         }
 
         /* Page break optimization */
@@ -309,6 +372,19 @@
             .header {
                 padding: 15px;
             }
+
+            .action-buttons {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .action-btn::before {
+                display: none;
+            }
+
+            .action-btn::after {
+                display: none;
+            }
         }
 
         @media print {
@@ -326,7 +402,7 @@
                 border-radius: 0 !important;
             }
             
-            .print-btn { 
+            .action-buttons { 
                 display: none !important; 
             }
             
@@ -492,7 +568,6 @@
             </div>
            </section>
 
-
             <!-- Force page break before projects -->
             <section class="section projects-section">
                 <h2 class="section-title"><i class="fas fa-project-diagram"></i> PROJECT DETAILS</h2>
@@ -585,9 +660,79 @@
             </section>
         </div>
     </div>
+    <!-- Action buttons for print and download -->
+    <div class="action-buttons">
+        <button class="action-btn download-btn" onclick="downloadResume()" data-tooltip="Download Resume">
+            <i class="fas fa-download"></i>
+        </button>
+        <button class="action-btn print-btn" onclick="window.print()" data-tooltip="Print Resume">
+            <i class="fas fa-print"></i>
+        </button>
+    </div>
 
-    <button class="print-btn" onclick="window.print()" title="Print Resume">
-        <i class="fas fa-print"></i>
-    </button>
+    <script>
+        function downloadResume() {
+            // Download the .docx file from your project repository
+            const link = document.createElement('a');
+            
+            // Update this path to match your actual file location in the repo
+            // Common paths might be:
+            // './Sajid_Ahmad_Resume.docx' (if in same folder as HTML)
+            // './documents/Sajid_Ahmad_Resume.docx' (if in a documents folder)
+            // './assets/Sajid_Ahmad_Resume.docx' (if in an assets folder)
+            // './files/Sajid_Ahmad_Resume.docx' (if in a files folder)
+            
+            link.href = '../code/Sajid Ahmad.docx'; // Update this path as needed
+            link.download = 'Sajid_Ahmad_SAP_Security_Consultant.docx';
+            link.target = '_blank'; // Opens in new tab as fallback
+            
+            // Add error handling
+            link.onerror = function() {
+                alert('Resume file not found. Please check the file path and ensure the .docx file is in the correct location.');
+            };
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Helper function for file download
+        function downloadFile(url, filename) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Alternative: If you have the file as a blob or base64
+        function downloadFromBase64(base64Data, filename, mimeType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+            const byteCharacters = atob(base64Data);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            const blob = new Blob([byteArray], { type: mimeType });
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        }
+
+        // Method 4: If you want to generate the docx dynamically from the HTML content
+        // This would require a library like html-docx-js or similar
+        function generateDocxFromHTML() {
+            // This is a placeholder for dynamic generation
+            // You would need to include a library like html-docx-js
+            console.log('Dynamic DOCX generation requires additional libraries');
+        }
+    </script>
 </body>
 </html>
