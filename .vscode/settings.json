@@ -1,0 +1,9 @@
+{
+    // Workspace settings to help Live Server work reliably
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.host": "0.0.0.0",
+    "liveServer.settings.useLocalIp": true,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.donotShowInfoMsg": true
+}
